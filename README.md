@@ -315,6 +315,9 @@ dashboard/  app.py (UI) · data.py (read-only data access)        tests/  10 fil
 models/ reports/ data/   generated artefacts (git-ignored)
 ```
 
+## License
+Released under the [MIT License](LICENSE). The data in this repository is entirely synthetic; no real customer information is included.
+
 ## Portfolio text
 **GitHub description:** *SQL Server point-in-time customer feature store with leakage-free churn labels, cohort retention, benchmarked T-SQL and a tested ML pipeline (synthetic data).*
 

@@ -1,0 +1,38 @@
+# Secrets / local config
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Generated data, models, reports
+data/*
+!data/.gitkeep
+models/*
+!models/.gitkeep
+reports/*
+!reports/.gitkeep
+# small, human-readable results that the README links to (no data, no secrets)
+!reports/performance_report.md
+!reports/metrics_*.json
+*.csv
+*.parquet
+*.joblib
+*.pkl
+*.bak
+*.mdf
+*.ldf
+*.sqlplan
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

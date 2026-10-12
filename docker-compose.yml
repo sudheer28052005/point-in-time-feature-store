@@ -1,0 +1,25 @@
+# OPTIONAL SQL Server for people without a local instance.  *** NOT TESTED by the author (Docker was not available). ***
+# The project was developed and verified against a local SQL Server 2025 Express instance on Windows.
+#
+#   1. Put a strong password in .env:   MSSQL_SA_PASSWORD=<at least 8 chars, upper+lower+digit+symbol>
+#   2. docker compose up -d
+#   3. In .env use SQL authentication:
+#        SQL_SERVER_HOST=localhost   SQL_SERVER_PORT=1433   SQL_SERVER_USERNAME=sa   SQL_SERVER_PASSWORD=<same password>
+#        SQL_SERVER_TRUST_CERTIFICATE=yes     # the container uses a self-signed certificate (local development ONLY)
+#   4. $env:SQL_SERVER_PASSWORD = "<same password>"; .\scripts\run_sql.ps1 -Server "localhost,1433" -User sa -TrustServerCertificate
+#
+# Developer edition has no 10 GB cap and supports every feature used here (batch mode, columnstore, partitioning).
+# Query Store / Agent availability inside the container was not checked. Do not expose port 1433 beyond localhost.
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD:?set MSSQL_SA_PASSWORD in .env}"
+    ports:
+      - "127.0.0.1:1433:1433"
+    volumes:
+      - sqldata:/var/opt/mssql
+volumes:
+  sqldata:

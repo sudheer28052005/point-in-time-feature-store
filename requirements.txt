@@ -1,0 +1,13 @@
+# Python 3.10+ (3.11+ recommended). Install: pip install -r requirements.txt
+SQLAlchemy>=2.0,<2.1
+pyodbc>=5.0
+pandas>=2.0
+numpy>=1.26
+Faker>=24.0
+python-dotenv>=1.0
+scikit-learn>=1.4
+xgboost>=2.0
+matplotlib>=3.8
+streamlit>=1.33
+pytest>=8.0
+joblib>=1.3

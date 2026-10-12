@@ -1,0 +1,26 @@
+# Line endings: store AND check out text files with LF on every platform, so diffs stay clean and
+# Windows does not silently rewrite files (all scripts here, including *.ps1 and *.sql, run fine with LF).
+* text=auto eol=lf
+
+# Source and docs - explicitly text
+*.py    text eol=lf
+*.sql   text eol=lf
+*.ps1   text eol=lf
+*.md    text eol=lf
+*.json  text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.ini   text eol=lf
+*.txt   text eol=lf
+.gitignore     text eol=lf
+.gitattributes text eol=lf
+.env.example   text eol=lf
+
+# Binary: never touched by line-ending conversion or diffed as text
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.joblib   binary
+*.pkl      binary
+*.parquet  binary
+*.sqlplan  -diff
